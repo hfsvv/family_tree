@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "0ef1f99d-eebc-410e-a7f9-ac641035e1fd",
+		"name": "Family",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15646316"
+	},
+	"item": [
+		{
+			"name": "Add members",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n[\r\n    {\r\n        \"name\": \"JennyDoe\"\r\n    },\r\n    {\r\n        \"name\": \"JimmyDoe\"\r\n    },\r\n    {\r\n        \"name\": \"JohnDoe\"\r\n    },\r\n    {\r\n        \"name\": \"JaneDoe\"\r\n    },\r\n    {\r\n        \"name\": \"JamesDoe\"\r\n    },\r\n    {\r\n        \"name\": \"JezaaDoe\"\r\n    },\r\n    {\r\n        \"name\": \"JasonDoe\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/add-member",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"add-member"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add relations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"member1\":\"\",\r\n    \"member2\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/add-relation",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"add-relation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "shortest path and count",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMjMsImV4cCI6MTcyNDk4Njk0Nn0.P55rg7aTrC6x_pp5zINnqpMnDqBl-mx15lahnP26t5k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/shortest-path-count?start=JasonDoe&end=JasonDoe",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"shortest-path-count"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "JasonDoe"
+						},
+						{
+							"key": "end",
+							"value": "JasonDoe"
+						},
+						{
+							"key": null,
+							"value": "print(family.find_paths(\"JamesDoe\", \"JennyDoe\"))\nprint(family.find_shortest_path(\"JamesDoe\", \"JennyDoe\"))\n\n# print(family.find_paths(\"JohnDoe\", \"JamesDoe\"))\n# print(family.find_paths(\"JohnDoe\", \"JohnDoe\"))\n# print(family.find_paths(\"JennyDoe\", \"JaneDoe\"))",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
