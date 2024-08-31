@@ -66,7 +66,7 @@ def find_shortest_path(request):
         end_member = MemberModel.objects.filter(name=end_member_name).first()
 
         if not start_member or not end_member:
-            return Response({"error": "Members not found"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"error": "Members not found"}, status=status.HTTP_400_BAD_REQUEST)
 
         graph = {}
         relationships = MemberRelationshipModel.objects.all()
